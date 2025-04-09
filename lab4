@@ -88,19 +88,19 @@ function task3(){
 
 function task4(){
     let students =[
-        {id:1, name:"Oleksandr", age: 18, course: 1},
-        {id:2, name:"Anton", age: 19, course: 2},
-        {id:3, name:"Vasya", age: 20, course: 3},
-        {id:4, name:"Oleksiy", age: 21, course: 4}
+        {id:1, name:"Vova", age: 18, course: 1},
+        {id:2, name:"Grisha", age: 23, course: 2},
+        {id:3, name:"Maxim", age: 18, course: 3},
+        {id:4, name:"Yaroslav", age: 65, course: 4}
     ]
 
     console.log(students)
-    students = students.filter(a => a.name !== "Oleksiy");
+    students = students.filter(a => a.name !== "Vova");
 
     console.log(students);
 
     students.push(
-        {id: 5, name:"Vlad", age:18, course:2}
+        {id: 5, name:"Grisha", age:23, course:2}
     )
 
     console.log(students);
