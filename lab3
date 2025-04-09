@@ -8,7 +8,6 @@
 
 <body>
 <script>
-	// Task1
 function task1(previous, forward){
     let sum = previous + forward;
     let newnum;
@@ -26,7 +25,6 @@ function task1(previous, forward){
 }
 
 
-// Task2
 function task2(){
     let sum = 0;
     cycle:
@@ -44,7 +42,6 @@ function task2(){
 
 
 
-// Task3
 function task3(choice){
 
     switch (choice){
@@ -76,7 +73,6 @@ function task3(choice){
 
 
 
-// Task4
 function task4(a){
     let b = [];
 
@@ -94,7 +90,6 @@ function task4(a){
 
 
 
-//Task5
 function task5() {
     let nums = (arg1, arg2, arg3, arg4) => {
         arg1++;
@@ -121,8 +116,6 @@ function task6(a, b){
 }
 
 
-
-//Functions call
 task1(0,1);
 // task2();
 // task3(9);
