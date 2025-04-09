@@ -9,7 +9,7 @@
 <body>
 <script>
 	function line(){
-    return console.log("--------------------------");
+    return console.log("------------");
 }
 
 function task1(fruits){
@@ -214,8 +214,8 @@ function task7(){
     delete student.age
     console.log(student)
 }
-// task1(["Apple", "Banana", "Cherry"])
-// task2(["Blue", "Black", "Blue","Purple", "Orange"])
+// task1(["banana", "apple", "kiwi"])
+// task2(["white", "Black", "white","Purple", "pink"])
 // task3();
 // task4();
 // task5();
