@@ -25,22 +25,15 @@ function task1(previous, forward){
 }
 
 
-function task2(){
-    let sum = 0;
-    cycle:
-        for(let i = 2; i < 1000; i++){
-            for(let j = 2; j < i; j++){
-                if(i % j === 0){
-                    continue cycle;
-                }
-            }
-            console.log(i);
-            sum += i;
-        }
-        console.log(sum);
+function task2() {
+  let sum = 0; 
+  
+  for (let i = 1; i <= 1000; i++) {
+    sum += i; 
+  }
+  
+  return sum; 
 }
-
-
 
 function task3(choice){
 
@@ -117,7 +110,7 @@ function task6(a, b){
 
 
 task1(0,1);
-// task2();
+// console.log(task2());
 // task3(2);
 // task4([[6,5,4,3,2],[16,157,2],[3,4,4,4,2,1]])
 // task5()
