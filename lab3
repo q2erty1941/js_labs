@@ -118,10 +118,10 @@ function task6(a, b){
 
 task1(0,1);
 // task2();
-// task3(9);
-// task4([[2,3,4,5,6],[32,321,2],[2,5,5,6,2,1]])
+// task3(2);
+// task4([[6,5,4,3,2],[16,157,2],[3,4,4,4,2,1]])
 // task5()
-// console.log(task6(15,5));
+// console.log(task6(25,10));
 </script>
 </body>
 </html>
