@@ -1,1 +1,166 @@
-lab2
+// function findMinAndMax(arr){
+//     if(!Array.isArray(arr) || arr == null || arr.length === 0){
+//         return 0;
+//     }
+//     return{
+//         min: Math.min(...arr),
+//         max: Math.max(...arr),
+//     }
+// }
+// arr = [1,2,10,19,13,1,2,3,4,5]
+// console.log(JSON.stringify(findMinAndMax(arr), null, 2));
+
+
+// function compareObjects(obj1, obj2) {
+//     const keys1 = Object.keys(obj1);
+//     const keys2 = Object.keys(obj2);
+//
+//     if (keys1.length !== keys2.length) {
+//         return false;
+//     }
+//
+//     return keys1.every(key => obj2.hasOwnProperty(key) && obj1[key] === obj2[key]);
+// }
+//
+// const person1 = { name: "Alice", age: 25 };
+// const person2 = { name: "Alice", age: 25 };
+// const person3 = { name: "Bob", age: 30 };
+//
+// console.log(compareObjects(person1, person2));
+// console.log(compareObjects(person1, person3));
+
+
+
+// Task2
+// function range(number, min, max){
+//     return number >= min && number <= max;
+// }
+//
+// console.log(range(10, 5, 20));
+// console.log(range(3, 5, 20));
+//
+//
+//
+// let isActive = true;
+// console.log(isActive);
+//
+// isActive = !isActive;
+// console.log(isActive);
+
+//Task3
+// function getGradeDescription(grade) {
+//     if (grade >= 90) {
+//         return "Відмінно";
+//     } else if (grade >= 75) {
+//         return "Добре";
+//     } else if (grade >= 60) {
+//         return "Задовільно";
+//     } else {
+//         return "Незадовільно";
+//     }
+// }
+//
+// console.log(getGradeDescription(95));
+// console.log(getGradeDescription(80));
+// console.log(getGradeDescription(65));
+// console.log(getGradeDescription(50));
+
+// let grade = prompt("Введіть оцінку: ");
+// if(grade >= 90) {
+//     alert("Відмінно")
+// } else if (grade >= 75) {
+//     alert("Добре")
+// } else if (grade >= 60) {
+//     alert("Задовільно")
+// } else{
+//     alert ("Незадовільно");
+// }
+
+//Task 3.2
+
+// function getSeason(month){
+//     if(month >=1 && month <= 12){
+//         if(month ===12 || month ===1 || month ===2){
+//             return "Зима";
+//         } else if (month === 3 || month ===4 || month ===5){
+//             return "Весна";
+//         } else if (month === 6 || month ===7 || month ===8){
+//             return "Літо";
+//         } else if (month === 9 || month ===10 || month ===11){
+//             return "Осінь";
+//         }
+//         else{
+//             return "Некоректно введено місяць!!!";
+//         }
+//     }
+// }
+// function getSeason(month) {
+//     if (month >= 1 && month <= 12) {
+//         if (month === 12 || month === 1 || month === 2) {
+//             return "Зима";
+//         } else if (month >= 3 && month <= 5) {
+//             return "Весна";
+//         } else if (month >= 6 && month <= 8) {
+//             return "Літо";
+//         } else {
+//             return "Осінь";
+//         }
+//     } else {
+//         return "Некоректний номер місяця";
+//     }
+// }
+
+
+// function getSeason(month){
+//     let choice = (month >=1 && month <=12)
+//         ? (month === 12 || month === 1 || month ===2) ?'Зима'
+//         : (month >= 3 && month <= 5) ?'Весна' :
+//                 (month >= 6 && month <= 8) ? 'Літо' :
+//                     'Осінь'
+//             :"Некоректний номер місяця";
+//     return choice;
+// }
+// console.log(getSeason(5));
+
+
+for (let i=5; i <= 50; i++) {
+    if(i % 5 ===0) {
+        console.log(i);
+    }
+}
+
+let nums = [4, 9, 16, 25, 36];
+
+for (let i = 0; i < nums.length; i++) {
+   console.log(Math.sqrt(nums[i]));
+}
+
+
+let word = "banana";
+console.log(word.length);
+
+
+let numbers = [10, 20, 30, 40, 50];
+let multiplication = 1;
+
+for(let i=1; i < numbers.length; i++) {
+    multiplication *= numbers[i];
+    console.log(multiplication);
+}
+
+
+
+for (let i=1 ; i<30; i++){
+    if(i % 3 ===0) {
+        console.log("Fizz");
+    }
+    if(i % 5 === 0) {
+        console.log("Buzz");
+    }
+    if(i % 5 === 0 && i % 3 ===0){
+        console.log("FizzBuzz");
+    }
+    // else {
+    //     console.log("Nothing");
+    // }
+}
