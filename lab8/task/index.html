@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1>Kanban Board</h1>
+<div class="board">
+    <div class="column todo" data-status="todo">
+        <h2>To Do</h2>
+        <div class="task" draggable="true">Завдання 1</div>
+        <div class="task" draggable="true">Завдання 2</div>
+        <div class="task" draggable="true">Завдання 3</div>
+        <div class="task" draggable="true">Завдання 4</div>
+    </div>
+    <div class="column in-progress" data-status="in-progress">
+        <h2>In Progress</h2>
+        <div class="task" draggable="true">Завдання 5</div>
+    </div>
+    <div class="column done" data-status="done">
+        <h2>Done</h2>
+        <div class="task" draggable="true">Завдання 6</div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
