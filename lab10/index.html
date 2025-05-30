@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FriendConnect - Find New Friends</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="form-container">
+  <div class="tabs">
+    <button class="tab-button active" onclick="showForm('signup')">Signup</button>
+    <button class="tab-button" onclick="showForm('login')">Login</button>
+  </div>
+
+  <form id="signup" class="form active" onsubmit="validateSignup(event)">
+    <div class="form-group">
+      <label for="signup-firstname">First Name</label>
+      <input type="text" id="signup-firstname">
+      <small class="form-text" id="signup-firstname-text"></small>
+    </div>
+
+    <div class="form-group">
+      <label for="signup-lastname">Last Name</label>
+      <input type="text" id="signup-lastname">
+      <small class="form-text" id="signup-lastname-text"></small>
+    </div>
+
+    <div class="form-group">
+      <label for="signup-email">Email</label>
+      <input type="email" id="signup-email">
+      <small class="form-text" id="signup-email-text"></small>
+    </div>
+
+    <div class="form-group">
+      <label for="signup-password">Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="signup-password">
+        <span class="toggle-password" onclick="togglePassword('signup-password')">👁️</span>
+      </div>
+      <small class="form-text" id="signup-password-text"></small>
+    </div>
+
+    <div class="form-group">
+      <label for="signup-confirm">Confirm Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="signup-confirm">
+        <span class="toggle-password" onclick="togglePassword('signup-confirm')">👁️</span>
+      </div>
+      <small class="form-text" id="signup-confirm-text"></small>
+    </div>
+
+    <div class="form-group">
+      <label for="signup-phone">Phone (Ukraine)</label>
+      <input type="tel" id="signup-phone">
+      <small class="form-text" id="signup-phone-text"></small>
+    </div>
+
+    <div class="form-group">
+      <label for="signup-dob">Date of Birth</label>
+      <input type="date" id="signup-dob">
+      <small class="form-text" id="signup-dob-text"></small>
+    </div>
+
+    <div class="form-group sex-inline">
+      <label>Sex</label>
+      <div class="radio-inline">
+        <label><input type="radio" name="signup-sex" value="male"> Male</label>
+        <label><input type="radio" name="signup-sex" value="female"> Female</label>
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="signup-country">Country</label>
+      <select id="signup-country" onchange="populateCities()">
+        <option value="">Select Country</option>
+        <option value="Ukraine">Ukraine</option>
+        <option value="USA">USA</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="signup-city">City</label>
+      <select id="signup-city" disabled>
+        <option value="">Select City</option>
+      </select>
+    </div>
+
+    <button type="submit">Signup</button>
+  </form>
+
+  <form id="login" class="form" onsubmit="validateLogin(event)">
+    <div class="form-group">
+      <label for="login-username">Username</label>
+      <input type="text" id="login-username">
+      <small class="form-text" id="login-username-text"></small>
+    </div>
+
+    <div class="form-group">
+      <label for="login-password">Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="login-password">
+        <span class="toggle-password" onclick="togglePassword('login-password')">👁</span>
+      </div>
+      <small class="form-text" id="login-password-text"></small>
+    </div>
+
+    <div class="form-group checkbox-wrapper">
+      <label for="remember-me">
+        Remember me
+        <input type="checkbox" id="remember-me">
+      </label>
+      <small class="login-validation-message" id="login-validation-message"></small>
+    </div>
+
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+<div id="app-container" class="app-container hidden">
+  <header class="app-header">
+    <div class="header-content">
+      <h1 class="logo">FriendConnect</h1>
+      <div class="favorites-btn">
+        <span>Favorites</span>
+        <i class="fa-solid fa-heart-circle-plus"></i>
+      </div>
+      <div class="user-info">
+        <span id="current-user"></span>
+        <button id="logout-btn" class="logout-btn">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="controls">
+      <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="search-input" placeholder="Search friends...">
+        <button id="clear-search" class="clear-btn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="filter-sort-container">
+        <div class="filter-group">
+          <label for="gender-filter"><i class="fas fa-venus-mars"></i> Gender:</label>
+          <select id="gender-filter">
+            <option value="all">All</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="age-filter"><i class="fas fa-filter"></i> Age:</label>
+          <select id="age-filter">
+            <option value="all">All</option>
+            <option value="18-25">18-25</option>
+            <option value="26-35">26-35</option>
+            <option value="36-45">36-45</option>
+            <option value="46+">46+</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="sort-by"><i class="fas fa-sort"></i> Sort by:</label>
+          <select id="sort-by">
+            <option value="name-asc">Name (A-Z)</option>
+            <option value="name-desc">Name (Z-A)</option>
+            <option value="age-asc">Age (Low-High)</option>
+            <option value="age-desc">Age (High-Low)</option>
+            <option value="registered-asc">Newest</option>
+            <option value="registered-desc">Oldest</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div id="pagination" class="pagination hidden"></div>
+
+    <div id="loading-indicator" class="loading-indicator hidden">
+      <div class="spinner"></div>
+      <p>Loading friends...</p>
+    </div>
+
+    <div id="error-message" class="error-message hidden"></div>
+
+    <div id="friends-container" class="friends-container"></div>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>© 2023 FriendConnect. All rights reserved.</p>
+  </footer>
+</div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
