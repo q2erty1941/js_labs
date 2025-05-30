@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Чаc</title>
+  <link rel="stylesheet" href="task3.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="clock">
+    <h2>Цифровий годинник</h2>
+    <div id="digitalClock"></div>
+  </div>
+
+  <div class="timer">
+    <h2>Таймер зворотного відліку</h2>
+    <label for="countdownInput"></label>
+    <input type="datetime-local" id="countdownInput">
+    <button onclick="startCountdown()">Запустити</button>
+    <div id="countdown"></div>
+  </div>
+
+  <div class="calendar">
+    <h2>Календар</h2>
+    <label for="calendarInput"></label>
+    <input type="month" id="calendarInput" onchange="updateCalendar()">
+    <div id="calendar"></div>
+  </div>
+
+  <div class="birthday">
+    <h2>Розрахунок до дня народження</h2>
+    <label for="birthdayInput"></label>
+    <input type="date" id="birthdayInput">
+    <button onclick="calculateBirthday()">Розрахувати</button>
+    <div id="birthdayCountdown"></div>
+  </div>
+</div>
+
+<script src="task3.js"></script>
+</body>
+</html>
