@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>My To-Do LIST</h1>
+</header>
+
+<div class="container">
+  <nav>
+    <ul>
+      <li><button id="sort-by-date">За датою</button></li>
+      <li><button id="sort-by-status">За статусом</button></li>
+      <li><button id="sort-by-update">За оновленням</button></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="todo-input">
+      <label for="task-input"></label><input type="text" id="task-input" placeholder="Введіть нове завдання" required>
+      <button id="add-task-btn">Додати завдання</button>
+    </div>
+
+    <div id="todo-list" class="todo-list">
+
+    </div>
+  </main>
+</div>
+
+<footer>
+  <p>&copy; 2025 To-Do List</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
