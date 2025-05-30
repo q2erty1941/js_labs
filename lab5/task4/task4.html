@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Облік продуктів</title>
+  <link rel="stylesheet" href="task4.css">
+</head>
+<body>
+
+<h1>Облік продуктів у магазині</h1>
+
+<div class="container">
+
+  <div class="section">
+    <h2>Додати продукт</h2>
+    <label for="productName"></label>
+    <input type="text" id="productName" placeholder="Назва продукту">
+    <label for="productPrice"></label>
+    <input type="number" id="productPrice" placeholder="Ціна">
+    <label for="productQuantity"></label>
+    <input type="number" id="productQuantity" placeholder="Кількість">
+    <button onclick="handleAddProduct()">Додати</button>
+  </div>
+
+  <div class="section">
+    <h2>Оновити продукт</h2>
+    <label for="updateName"></label>
+    <input type="text" id="updateName" placeholder="Назва продукту">
+    <label for="updatePrice"></label>
+    <input type="number" id="updatePrice" placeholder="Нова ціна">
+    <label for="updateQuantity"></label>
+    <input type="number" id="updateQuantity" placeholder="Нова кількість">
+    <button onclick="handleUpdateProduct()">Оновити</button>
+  </div>
+
+  <div class="section">
+    <h2>Видалити продукт</h2>
+    <label for="deleteName"></label>
+    <input type="text" id="deleteName" placeholder="Назва продукту">
+    <button onclick="handleRemoveProduct()">Видалити</button>
+  </div>
+
+  <div class="section">
+    <h2>Оформити замовлення</h2>
+    <label for="customerName"></label>
+    <input type="text" id="customerName" placeholder="Ім'я покупця">
+    <label for="orderProductName"></label>
+    <input type="text" id="orderProductName" placeholder="Назва продукту">
+    <label for="orderQuantity"></label>
+    <input type="number" id="orderQuantity" placeholder="Кількість">
+    <button onclick="handlePlaceOrder()">Замовити</button>
+  </div>
+  <div class="section">
+    <h2>Каталог продуктів</h2>
+    <ul id="productList"></ul>
+  </div>
+</div>
+
+<script src="task4.js"></script>
+</body>
+</html>
