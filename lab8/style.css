@@ -1,0 +1,233 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.settings {
+    background-color: #f7f7f7;
+    padding: 20px;
+    width: 25%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.settings h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.settings label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.settings input, .settings select, .settings button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.settings button {
+    background-color: #ff8c00;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.settings button:hover {
+    background-color: #e07b00;
+}
+
+.settings button:active {
+    background-color: #cc6a00;
+}
+
+.game-board {
+    width: 70%;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.game-board h2 {
+    color: #444;
+}
+
+#timer, #moves {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+#game-board-container {
+    display: grid;
+    grid-gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.card.open img {
+    display: block;
+}
+
+.card.open {
+    background-color: #fff;
+    border: 2px solid #4CAF50;
+}
+
+.card.matched {
+    background-color: #4CAF50;
+    border: 2px solid #4CAF50;
+    cursor: default;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #e07b00;
+}
+
+button:active {
+    background-color: #cc6a00;
+}
+
+#stopBtn {
+    background-color: #dc3545;
+    margin-right: 20px;
+}
+
+#stopBtn:hover {
+    background-color: #c82333;
+}
+
+
+@media (max-width: 768px) {
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .settings {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .game-board {
+        width: 100%;
+    }
+}
+
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+#game-board-container {
+    display: grid;
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+#game-board-container[data-rows="6"][data-columns="6"] {
+    grid-template-columns: repeat(6, 100px);
+}
+
+#results {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff7e6;
+    border: 2px solid #ff8c00;
+    border-radius: 12px;
+    padding: 25px 35px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    max-width: 90%;
+    text-align: center;
+}
+
+#results h2 {
+    margin-top: 0;
+    color: #ff8c00;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+#results p {
+    font-size: 18px;
+    color: #444;
+    margin: 10px 0;
+}
+
+#results .winner {
+    font-weight: bold;
+    font-size: 22px;
+    color: #4CAF50;
+    margin-top: 20px;
+}
+
+
+@media (max-width: 480px) {
+    .settings input, .settings select, .settings button {
+        font-size: 14px;
+    }
+}
